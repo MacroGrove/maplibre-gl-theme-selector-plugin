@@ -5,7 +5,7 @@ class MapLibreThemeSelector {
 
 
         if (!(this instanceof MapLibreDarkMode)) {
-            throw new Error('Instantiation Error: MapLibreDarkMode needs to be called with the new keyword.');
+            throw new Error('Instantiation Error: MapLibreThemeSelector needs to be called with the new keyword.');
         }
     }
 
