@@ -2,6 +2,7 @@
 <html>
 
 <head>
+    <title>Theme Selector</title>
     <meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no" />
     <script src='https://unpkg.com/maplibre-gl@1.15.2/dist/maplibre-gl.js'></script>
     <script src='https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-language/v0.10.0/mapbox-gl-language.js'></script>
@@ -22,13 +23,13 @@
             height: 95%;
         }
 
-        button {
+        /* select {
             z-index: 1;
             position: absolute;
             top: 5px;
             left: 5px;
             padding: 5px;
-        }
+        } */
     </style>
 </head>
 
@@ -46,11 +47,16 @@
         });
 
         let options = {
-
+            themes: {
+                "light": "https://tiles.stadiamaps.com/styles/alidade_smooth.json",
+                "dark": "https://tiles.stadiamaps.com/styles/alidade_smooth_dark.json",
+                "bright": "https://tiles.stadiamaps.com/styles/osm_bright.json",
+                "outdoors": "https://tiles.stadiamaps.com/styles/outdoors.json"
+            }
         }
 
         let themeSelector = new MapLibreThemeSelector(options);
-        map.addControl(themeSelector, 'top-left');
+        map.addControl(new MapLibreThemeSelector(options), 'top-left');
     </script>
 </body>
 
